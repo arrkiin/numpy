@@ -40,6 +40,7 @@ def configuration(parent_package='', top_path=None):
         sources=['lapack_litemodule.c', get_lapack_lite_sources],
         depends=['lapack_lite/f2c.h'],
         extra_info=lapack_info,
+        libraries= ['m',]
     )
 
     # umath_linalg module
@@ -48,7 +49,7 @@ def configuration(parent_package='', top_path=None):
         sources=['umath_linalg.c.src', get_lapack_lite_sources],
         depends=['lapack_lite/f2c.h'],
         extra_info=lapack_info,
-        libraries=['npymath'],
+        libraries=['npymath','m'],
     )
     return config
 

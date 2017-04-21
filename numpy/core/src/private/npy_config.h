@@ -45,6 +45,12 @@
 
 #endif
 
+/* Android only */
+#ifdef ANDROID
+#undef HAVE_LDEXPL
+#undef HAVE_FREXPL
+#endif
+
 #if defined(_MSC_VER) && (_MSC_VER == 1900)
 
 #undef HAVE_CASIN

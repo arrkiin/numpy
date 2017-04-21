@@ -94,6 +94,8 @@ def UnixCCompiler_create_static_lib(self, objects, output_libname,
             pass
         self.mkpath(os.path.dirname(output_filename))
         tmp_objects = objects + self.objects
+        from os import environ
+        self.archiver[0] = environ.get('AR')
         while tmp_objects:
             objects = tmp_objects[:50]
             tmp_objects = tmp_objects[50:]
