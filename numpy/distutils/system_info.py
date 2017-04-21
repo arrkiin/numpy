@@ -667,6 +667,7 @@ class system_info(object):
         return self.get_paths(self.section, key)
 
     def get_libs(self, key, default):
+        return []
         try:
             libs = self.cp.get(self.section, key)
         except NoOptionError:
